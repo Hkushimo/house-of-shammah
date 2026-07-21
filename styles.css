@@ -117,7 +117,8 @@ nav a:hover {
   position: relative;
   min-height: 86vh;
   display: grid;
-  align-items: end;
+  align-items: center;
+  padding: clamp(42px, 6vw, 78px) 0 clamp(56px, 7vw, 92px);
   isolation: isolate;
   overflow: hidden;
 }
@@ -147,7 +148,7 @@ nav a:hover {
   position: relative;
   z-index: 1;
   width: min(760px, calc(100% - 36px));
-  margin: 0 clamp(18px, 7vw, 96px) clamp(48px, 8vw, 96px);
+  margin: 0 clamp(18px, 7vw, 96px);
   color: var(--white);
 }
 
