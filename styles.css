@@ -233,7 +233,10 @@ h3 {
 .intro-section,
 .availability-section,
 .mission-section,
-.contact-section {
+.contact-section,
+.statement-section,
+.best-practices-section,
+.model-section {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
   gap: clamp(28px, 6vw, 80px);
@@ -245,10 +248,19 @@ h3 {
   max-width: 780px;
 }
 
+.centered {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .section-copy p,
 .availability-section p,
 .contact-section p,
-.quote-section p {
+.quote-section p,
+.statement-copy p,
+.model-section p,
+.best-practices-section p {
   color: var(--muted);
   font-size: 1.06rem;
 }
@@ -285,6 +297,58 @@ h3 {
 }
 
 .values-grid p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.statement-section {
+  background: var(--soft);
+}
+
+.statement-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.pathway-section {
+  padding: clamp(64px, 9vw, 116px) clamp(18px, 7vw, 96px);
+  background: var(--paper);
+}
+
+.pathway-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: clamp(30px, 5vw, 56px);
+}
+
+.pathway-grid article {
+  min-height: 260px;
+  padding: 24px;
+  border-radius: 8px;
+  background: var(--white);
+  border: 1px solid rgba(29, 37, 35, 0.1);
+  box-shadow: 0 14px 42px rgba(29, 37, 35, 0.08);
+}
+
+.pathway-grid span {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  border-radius: 50%;
+  color: var(--white);
+  background: var(--teal);
+  font-weight: 800;
+}
+
+.pathway-grid h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+}
+
+.pathway-grid p {
   margin-bottom: 0;
   color: var(--muted);
 }
@@ -361,6 +425,68 @@ h3 {
   border-radius: 8px;
   object-fit: cover;
   box-shadow: var(--shadow);
+}
+
+.best-practices-section {
+  background: var(--teal-dark);
+  color: var(--white);
+}
+
+.best-practices-section p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.check-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  position: relative;
+  padding: 15px 18px 15px 46px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 700;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 20px;
+  width: 10px;
+  height: 16px;
+  border-right: 3px solid var(--gold);
+  border-bottom: 3px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+.model-section {
+  background: var(--paper);
+}
+
+.service-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.service-cloud span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--teal-dark);
+  background: var(--white);
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  box-shadow: 0 10px 28px rgba(29, 37, 35, 0.07);
+  font-weight: 800;
 }
 
 .quote-section {
@@ -555,12 +681,16 @@ footer p {
   .intro-section,
   .availability-section,
   .mission-section,
-  .contact-section {
+  .contact-section,
+  .statement-section,
+  .best-practices-section,
+  .model-section {
     grid-template-columns: 1fr;
   }
 
   .availability-list,
-  .photo-band {
+  .photo-band,
+  .pathway-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -605,7 +735,8 @@ footer p {
   .values-grid,
   .availability-list,
   .photo-band,
-  .gallery-section {
+  .gallery-section,
+  .pathway-grid {
     grid-template-columns: 1fr;
   }
 
